@@ -25,83 +25,95 @@
     </header>
 
     <main>
-        <section class="form-section">
-            <div class="container form-container">
+        <section class="order-section">
+            <div class="container">
                 <h2>Place an Order Request</h2>
-                <p class="form-intro">
-                    Complete the form below and we will confirm availability and pickup details.
+                <p class="order-intro">
+                    Use the form below to request your order. We will review availability and follow up to confirm your order and pickup details.
                 </p>
 
-                <form id="orderForm">
-                    <div class="form-group">
-                        <label for="customerName">Full Name</label>
-                        <input type="text" id="customerName" name="customerName" required>
+                <div class="order-layout">
+                    <div class="order-info">
+                        <h3>Before You Order</h3>
+                        <p>Please review the current availability before submitting your request.</p>
+                        <ul>
+                            <li>Availability may change depending on weather and harvest conditions.</li>
+                            <li>Orders are confirmed after we review your request.</li>
+                            <li>Pickup details will be shared after confirmation.</li>
+                            <li>Please submit one form per household/order request.</li>
+                        </ul>
+
+                        <a href="available.html" class="button secondary">View What’s Available</a>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="order-form-wrap">
+                        <form action="https://formsubmit.co/sodabackyardfarm@outlook.com" method="POST">
+                                <input type="hidden" name="_subject" value="New Garden Order Request">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table"> 
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customerName">Full Name</label>
+                                    <input type="text" id="customerName" name="customerName" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pickupDay">Preferred Pickup Day</label>
+                                    <select id="pickupDay" name="pickupDay" required>
+                                        <option value="">Select a day</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <fieldset class="form-group">
+                                <legend>Select Items</legend>
+
+                                <div class="product-row">
+                                    <label for="carrotsQty">Carrots ($3 per bunch)</label>
+                                    <input type="number" id="carrotsQty" name="carrotsQty" min="0" value="0">
+                                </div>
+
+                                <div class="product-row">
+                                    <label for="kaleQty">Kale ($4 per bunch)</label>
+                                    <input type="number" id="kaleQty" name="kaleQty" min="0" value="0">
+                                </div>
+
+                                <div class="product-row">
+                                    <label for="garlicQty">Garlic ($8 per lb)</label>
+                                    <input type="number" id="garlicQty" name="garlicQty" min="0" value="0">
+                                </div>
+
+                                <div class="product-row">
+                                    <label for="lettuceQty">Lettuce ($3 each)</label>
+                                    <input type="number" id="lettuceQty" name="lettuceQty" min="0" value="0">
+                                </div>
+                            </fieldset>
+
+                            <div class="form-group">
+                                <label for="notes">Additional Notes</label>
+                                <textarea id="notes" name="notes" rows="5" placeholder="Add any questions, preferred pickup timing, or special notes here."></textarea>
+                            </div>
+
+                            <button type="submit" class="button">Submit Order Request</button>
+                            <p id="formMessage" class="form-message"></p>
+                        </form>
                     </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-
-                    <fieldset class="form-group">
-                        <legend>Select Items</legend>
-
-                        <div class="checkbox-row">
-                            <label>
-                                <input type="checkbox" name="items" value="Carrots">
-                                Carrots
-                            </label>
-                            <input type="number" name="carrotsQty" min="0" placeholder="Qty">
-                        </div>
-
-                        <div class="checkbox-row">
-                            <label>
-                                <input type="checkbox" name="items" value="Kale">
-                                Kale
-                            </label>
-                            <input type="number" name="kaleQty" min="0" placeholder="Qty">
-                        </div>
-
-                        <div class="checkbox-row">
-                            <label>
-                                <input type="checkbox" name="items" value="Garlic">
-                                Garlic
-                            </label>
-                            <input type="number" name="garlicQty" min="0" placeholder="Qty">
-                        </div>
-
-                        <div class="checkbox-row">
-                            <label>
-                                <input type="checkbox" name="items" value="Lettuce">
-                                Lettuce
-                            </label>
-                            <input type="number" name="lettuceQty" min="0" placeholder="Qty">
-                        </div>
-                    </fieldset>
-
-                    <div class="form-group">
-                        <label for="pickupDay">Preferred Pickup Day</label>
-                        <select id="pickupDay" name="pickupDay" required>
-                            <option value="">-- Select a day --</option>
-                            <option value="Saturday">Saturday</option>
-                            <option value="Sunday">Sunday</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="notes">Additional Notes</label>
-                        <textarea id="notes" name="notes" rows="5" placeholder="Add any questions or special notes here."></textarea>
-                    </div>
-
-                    <button type="submit" class="button">Submit Order Request</button>
-                </form>
-
-                <p id="formMessage" class="form-message"></p>
+                </div>
             </div>
         </section>
     </main>
