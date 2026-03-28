@@ -404,3 +404,43 @@ footer {
     width: 100%;
     border-radius: 8px;
 }
+
+/* =========================
+   Donate Page
+========================= */
+.donate-section {
+    padding: 50px 0;
+}
+
+.donate-card {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.donate-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.donate-card p {
+    margin-bottom: 18px;
+}
+
+.donate-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.donate-note {
+    margin-top: 20px;
+    font-style: italic;
+    color: #666;
+}
