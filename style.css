@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #F7F4ED;
+    background-color: #faf7f2;
     color: #2f3b2f;
 }
 
@@ -67,7 +67,7 @@ nav a:hover {
 
 .button {
     display: inline-block;
-    background-color: #6b8e23;
+    background-color: #6fa8dc;
     color: white;
     text-decoration: none;
     padding: 12px 20px;
@@ -80,7 +80,7 @@ nav a:hover {
 }
 
 .button.secondary {
-    background-color: #8b5e3c;
+    background-color: #b8744f;
 }
 
 .button.secondary:hover {
