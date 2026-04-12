@@ -102,30 +102,37 @@ nav a:hover {
 ========================= */
 .button {
     display: inline-block;
-    background-color: var(--green-main);
-    color: var(--white);
+    background: linear-gradient(135deg, #2f9e44, #4CD964);
+    color: white;
     text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 6px;
+    padding: 14px 24px;
+    border-radius: 8px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all 0.25s ease;
 }
 
 .button:hover {
-    background-color: var(--green-dark);
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #14532D, #3ec355);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .button.secondary {
-    background-color: var(--green-bright);
-    color: var(--green-deep);
+    background: #e9f8ec;
+    color: #14532D;
+    border: 2px solid #4CD964;
 }
 
 .button.secondary:hover {
-    background-color: #3ec355;
-    color: var(--green-deep);
+    background: #dff7e3;
 }
 
 /* =========================
