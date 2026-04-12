@@ -645,15 +645,57 @@ footer {
 }
 
 /* ORDER TOTAL DISPLAY */
+/* ORDER TOTAL DISPLAY (better alignment) */
 .order-total {
     margin: 20px 0;
-    padding: 15px;
+    padding: 15px 20px;
     background-color: #e6f9ec;
     border-left: 5px solid #21ed65;
+    border-radius: 6px;
+    text-align: left; /* changed */
     font-size: 1.2rem;
     font-weight: bold;
     color: #0f5132;
-    border-radius: 6px;
+}
+
+/* FIELDSET FIX */
+fieldset.form-group {
+    border: 1px solid #ccebd6;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f3fff6;
+}
+
+/* LEGEND FIX — keeps it INSIDE visually */
+fieldset.form-group legend {
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #0f5132;
+    background-color: #f3fff6;
+    border-radius: 4px;
+}
+
+/* FORM MESSAGE */
+.form-message {
+    margin-top: 15px;
+    color: #155724;
+    font-weight: 500;
+}
+
+/* INPUT ALIGNMENT (keep grid intact) */
+.product-row input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccebd6;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.product-row input[type="number"]:focus {
+    outline: none;
+    border-color: #21ed65;
+    box-shadow: 0 0 5px rgba(33, 237, 101, 0.4);
+
 }
 
 /* Subtle animation when total updates */
