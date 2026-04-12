@@ -80,7 +80,7 @@ nav a:hover {
 }
 
 /* =========================
-   HERO + SPLIT LAYOUT
+   Hero + Split Layout
 ========================= */
 .hero {
     background: linear-gradient(180deg, #e8faeb 0%, #f7fdf8 100%);
@@ -90,7 +90,8 @@ nav a:hover {
 .split-section {
     display: flex;
     align-items: center;
-    gap: 40px;
+    justify-content: space-between;
+    gap: 50px;
 }
 
 .split-section.reverse {
@@ -98,20 +99,25 @@ nav a:hover {
 }
 
 .text-content {
-    flex: 1;
+    flex: 1 1 55%;
+    max-width: 560px;
 }
 
 .image-content {
-    flex: 1;
+    flex: 1 1 45%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .image-content img {
     width: 100%;
-    max-width: 400px; /* FIXED IMAGE SIZE */
+    max-width: 360px;
     height: auto;
-    border-radius: 10px;
+    display: block;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    object-fit: cover;
 }
 
 /* =========================
@@ -119,17 +125,23 @@ nav a:hover {
 ========================= */
 .hero h2,
 .featured h2,
-.about h2,
-.updates h2 {
+.about h2 {
     margin-bottom: 15px;
     color: var(--green-dark);
 }
 
+.hero h2 {
+    font-size: 2rem;
+}
+
 .hero p,
-.about p,
-.updates p {
+.about p {
     color: var(--text-soft);
     margin-bottom: 20px;
+}
+
+.featured h2 {
+    text-align: center;
 }
 
 /* =========================
@@ -138,7 +150,7 @@ nav a:hover {
 .button {
     display: inline-block;
     background: linear-gradient(135deg, var(--green-main), var(--green-bright));
-    color: white;
+    color: var(--white);
     text-decoration: none;
     padding: 12px 22px;
     border-radius: 8px;
@@ -157,8 +169,7 @@ nav a:hover {
    Sections
 ========================= */
 .featured,
-.about,
-.updates {
+.about {
     padding: 50px 0;
 }
 
@@ -226,14 +237,58 @@ footer {
 /* =========================
    Responsive
 ========================= */
+@media (max-width: 900px) {
+    .split-section,
+    .split-section.reverse {
+        gap: 30px;
+    }
+
+    .image-content img {
+        max-width: 300px;
+    }
+}
+
 @media (max-width: 768px) {
-    .split-section {
+    .split-section,
+    .split-section.reverse {
         flex-direction: column;
         text-align: center;
+    }
+
+    .text-content,
+    .image-content {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .image-content img {
+        max-width: 320px;
     }
 
     nav ul {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 92%;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .image-content img {
+        max-width: 260px;
     }
 }
