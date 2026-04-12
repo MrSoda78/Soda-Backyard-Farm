@@ -55,6 +55,10 @@ header h1 {
     margin-bottom: 5px;
 }
 
+.header-copy {
+    max-width: 700px;
+}
+
 .tagline {
     margin-bottom: 0;
     font-size: 1rem;
@@ -85,80 +89,28 @@ nav a:hover {
 }
 
 /* =========================
-   Header Layout
-   Top-right image overlaps downward
+   Floating Home Image
 ========================= */
-.header-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 30px;
+.home-page {
     position: relative;
 }
 
-.header-copy {
-    flex: 1 1 auto;
-    min-width: 0;
-    padding-right: 10px;
+.floating-home-image {
+    position: absolute;
+    top: -46px;
+    right: 5%;
+    z-index: 4;
+    pointer-events: none;
 }
 
-.header-corner-image {
-    flex: 0 0 auto;
-    position: relative;
-    margin-bottom: -58px;
-    z-index: 3;
-}
-
-.header-corner-image img {
+.floating-home-image img {
     display: block;
-    width: 155px;
+    width: 150px;
     max-width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: var(--shadow-strong);
-    object-fit: cover;
     background-color: var(--white);
-}
-
-/* Optional support if older banner markup still exists */
-.header-banner {
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.header-banner-text {
-    flex: 1 1 55%;
-    max-width: 560px;
-}
-
-.header-banner-text h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: var(--white);
-}
-
-.header-banner-text p {
-    color: #f2fff4;
-    margin-bottom: 20px;
-}
-
-.header-banner-image {
-    flex: 1 1 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.header-banner-image img {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: var(--shadow-strong);
     object-fit: cover;
 }
 
@@ -167,7 +119,7 @@ nav a:hover {
 ========================= */
 .hero {
     background: linear-gradient(180deg, #e8faeb 0%, #f7fdf8 100%);
-    padding: 82px 0 55px;
+    padding: 72px 0 55px;
     position: relative;
     z-index: 1;
 }
@@ -656,20 +608,12 @@ footer {
    Responsive
 ========================= */
 @media (max-width: 900px) {
-    .header-corner-image {
-        margin-bottom: -55px;
+    .floating-home-image {
+        top: -40px;
     }
 
-    .header-corner-image img {
+    .floating-home-image img {
         width: 135px;
-    }
-
-    .header-banner {
-        gap: 30px;
-    }
-
-    .header-banner-image img {
-        max-width: 250px;
     }
 
     .split-section,
@@ -686,39 +630,23 @@ footer {
     }
 
     .hero {
-        padding-top: 72px;
+        padding-top: 66px;
     }
 }
 
 @media (max-width: 768px) {
-    .header-top {
+    nav ul {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
+        gap: 10px;
     }
 
-    .header-corner-image {
-        margin-bottom: -35px;
-        align-self: flex-end;
+    .floating-home-image {
+        top: -28px;
+        right: 6%;
     }
 
-    .header-corner-image img {
-        width: 150px;
-    }
-
-    .header-banner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .header-banner-text,
-    .header-banner-image {
-        max-width: 100%;
-        flex: 1 1 100%;
-    }
-
-    .header-banner-image img {
-        max-width: 240px;
+    .floating-home-image img {
+        width: 125px;
     }
 
     .split-section,
@@ -737,13 +665,8 @@ footer {
         max-width: 320px;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .hero {
-        padding: 70px 0 45px;
+        padding: 58px 0 45px;
     }
 
     .form-row,
@@ -757,23 +680,19 @@ footer {
         width: 92%;
     }
 
-    .header-banner-text h2 {
-        font-size: 1.6rem;
+    .floating-home-image {
+        top: -18px;
+        right: 6%;
     }
 
-    .header-corner-image {
-        margin-bottom: -20px;
-    }
-
-    .header-corner-image img,
-    .header-banner-image img,
+    .floating-home-image img,
     .image-content img {
-        max-width: 200px;
-        width: 100%;
+        width: 105px;
+        max-width: 100%;
     }
 
     .hero {
-        padding-top: 55px;
+        padding-top: 45px;
     }
 
     .questions-card,
