@@ -8,20 +8,24 @@
    Colour Palette
 ========================= */
 :root {
-    --green-darkest: #21ed65;
-    --green-dark: #2f6b3c;
-    --green-main: #3f8a4f;
-    --green-medium: #5aa469;
-    --green-soft: #dcefdc;
-    --green-light: #eef7ee;
-    --green-accent: #7bbf86;
-    --green-border: #bfd8c1;
+    --green-bright: #4CD964;
+    --green-main: #2f9e44;
+    --green-dark: #14532D;
+    --green-deep: #0f3d22;
+    --green-soft: #dff7e3;
+    --green-light: #f3fcf4;
+    --green-border: #bfe8c7;
+    --green-muted: #e9f8ec;
+
     --white: #ffffff;
-    --text-dark: #243224;
-    --text-soft: #4f634f;
+    --text-dark: #1f2e22;
+    --text-soft: #4b5f50;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* =========================
+   Base
+========================= */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -39,7 +43,7 @@ body {
    Header / Navigation
 ========================= */
 header {
-    background: linear-gradient(135deg, var(--green-darkest), var(--green-main));
+    background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
     color: var(--white);
     padding: 20px 0;
 }
@@ -51,7 +55,7 @@ header h1 {
 .tagline {
     margin-bottom: 15px;
     font-size: 1rem;
-    color: #e8f6e8;
+    color: #ecffef;
 }
 
 nav ul {
@@ -69,14 +73,14 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
-    color: #e6f7e6;
+    color: #ecffef;
 }
 
 /* =========================
    Hero
 ========================= */
 .hero {
-    background: linear-gradient(180deg, #e4f3e4 0%, #f4fbf4 100%);
+    background: linear-gradient(180deg, #e8faeb 0%, #f7fdf8 100%);
     padding: 60px 0;
     text-align: center;
 }
@@ -84,7 +88,7 @@ nav a:hover {
 .hero h2 {
     font-size: 2rem;
     margin-bottom: 15px;
-    color: var(--green-darkest);
+    color: var(--green-dark);
 }
 
 .hero p {
@@ -115,11 +119,13 @@ nav a:hover {
 }
 
 .button.secondary {
-    background-color: var(--green-medium);
+    background-color: var(--green-bright);
+    color: var(--green-deep);
 }
 
 .button.secondary:hover {
-    background-color: var(--green-dark);
+    background-color: #3ec355;
+    color: var(--green-deep);
 }
 
 /* =========================
@@ -148,15 +154,11 @@ nav a:hover {
 .order-section h2 {
     margin-bottom: 20px;
     text-align: center;
-    color: var(--green-darkest);
+    color: var(--green-dark);
 }
 
 .about p,
-.updates p,
-.media-intro,
-.videos-intro,
-.calendar-intro,
-.order-intro {
+.updates p {
     max-width: 800px;
     margin: 0 auto 20px;
     text-align: center;
@@ -199,22 +201,22 @@ nav a:hover {
 }
 
 .available {
-    background-color: #dcefdc;
-    color: var(--green-darkest);
-}
-
-.limited {
-    background-color: #edf6e4;
-    color: #58733c;
-}
-
-.coming {
-    background-color: #d6ead8;
+    background-color: #dff7e3;
     color: var(--green-dark);
 }
 
+.limited {
+    background-color: #eef9df;
+    color: #56732d;
+}
+
+.coming {
+    background-color: #e8f8eb;
+    color: var(--green-main);
+}
+
 /* =========================
-   Forms
+   Order Form / Forms
 ========================= */
 .form-container {
     max-width: 750px;
@@ -241,7 +243,7 @@ nav a:hover {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
-    color: var(--green-darkest);
+    color: var(--green-dark);
 }
 
 .form-group input,
@@ -262,14 +264,14 @@ nav a:hover {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--green-main);
-    box-shadow: 0 0 0 3px rgba(63, 138, 79, 0.15);
+    box-shadow: 0 0 0 3px rgba(76, 217, 100, 0.18);
 }
 
 fieldset.form-group {
     border: 1px solid var(--green-border);
     padding: 20px;
     border-radius: 8px;
-    background-color: #fbfefb;
+    background-color: var(--green-muted);
 }
 
 .checkbox-row {
@@ -302,6 +304,13 @@ fieldset.form-group {
 /* =========================
    Videos
 ========================= */
+.videos-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: var(--text-soft);
+}
+
 .video-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -347,6 +356,13 @@ fieldset.form-group {
 /* =========================
    Calendar
 ========================= */
+.calendar-intro {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 30px;
+    color: var(--text-soft);
+}
+
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -387,6 +403,7 @@ fieldset.form-group {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 30px;
+    color: var(--text-soft);
 }
 
 .media-grid {
@@ -478,6 +495,7 @@ fieldset.form-group {
     text-align: center;
     max-width: 850px;
     margin: 0 auto 30px;
+    color: var(--text-soft);
 }
 
 .order-layout {
@@ -521,7 +539,7 @@ fieldset.form-group {
     text-align: right;
     font-size: 1.1rem;
     font-weight: bold;
-    color: var(--green-darkest);
+    color: var(--green-dark);
 }
 
 .form-row {
@@ -552,7 +570,7 @@ fieldset.form-group {
    Footer
 ========================= */
 footer {
-    background: linear-gradient(135deg, var(--green-darkest), var(--green-dark));
+    background: linear-gradient(135deg, var(--green-deep), var(--green-dark));
     color: var(--white);
     text-align: center;
     padding: 20px 0;
