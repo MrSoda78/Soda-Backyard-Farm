@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const orderForm = document.getElementById("orderForm");
     const totalDisplay = document.getElementById("orderTotal");
+    const formMessage = document.getElementById("formMessage");
     const quantityInputs = document.querySelectorAll(".product-row input[type='number']");
 
     function updateTotal() {
@@ -12,13 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (totalDisplay) {
-            totalDisplay.textContent = total.toFixed(2);
+            totalDisplay.textContent = "Total: $" + total.toFixed(2);
         }
     }
 
     quantityInputs.forEach(function (input) {
         input.addEventListener("input", updateTotal);
     });
+
+    if (orderForm && formMessage) {
+        orderForm.addEventListener("submit", function () {
+            formMessage.textContent = "Thank you. Your order request has been submitted.";
+        });
+    }
 
     updateTotal();
 

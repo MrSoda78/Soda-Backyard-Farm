@@ -573,7 +573,6 @@ fieldset.form-group {
     width: 100%;
 }
 
-/* Main submit button on order form */
 .order-form-wrap .button,
 #orderForm button[type="submit"] {
     width: 100%;
@@ -643,4 +642,44 @@ footer {
     .product-row {
         grid-template-columns: 1fr;
     }
+}
+
+/* ORDER TOTAL DISPLAY */
+.order-total {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #e6f9ec;
+    border-left: 5px solid #21ed65;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0f5132;
+    border-radius: 6px;
+}
+
+/* Subtle animation when total updates */
+.order-total.updated {
+    background-color: #d1f7dc;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+/* FORM MESSAGE (confirmation text) */
+.form-message {
+    margin-top: 15px;
+    color: #155724;
+    font-weight: 500;
+}
+
+.product-row input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccebd6;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.product-row input[type="number"]:focus {
+    outline: none;
+    border-color: #21ed65;
+    box-shadow: 0 0 5px rgba(33, 237, 101, 0.4);
 }
