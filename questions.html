@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions | Our Garden</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Our Garden</h1>
+            <p class="tagline">Fresh homegrown produce and seasonal updates.</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="available.html">What’s Available</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="questions.html">Questions</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="calendar.html">Growing Calendar</a></li>
+                    <li><a href="donate.html">Support the Garden</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="questions-section">
+            <div class="container">
+                <h2>Ask a Question</h2>
+                <p class="questions-intro">
+                    Have a question about produce, pickup, availability, or the garden? Send us a message and we will get back to you.
+                </p>
+
+                <div class="questions-card">
+                    <form action="https://formsubmit.co/sodabackyardgarden@outlook.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Garden Question">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="questionName">Full Name</label>
+                                <input type="text" id="questionName" name="questionName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="questionEmail">Email Address</label>
+                                <input type="email" id="questionEmail" name="questionEmail" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="questionPhone">Phone Number (optional)</label>
+                            <input type="tel" id="questionPhone" name="questionPhone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="questionTopic">Topic</label>
+                            <select id="questionTopic" name="questionTopic" required>
+                                <option value="">Select a topic</option>
+                                <option value="Availability">Availability</option>
+                                <option value="Pickup">Pickup</option>
+                                <option value="Produce">Produce</option>
+                                <option value="Pricing">Pricing</option>
+                                <option value="General Question">General Question</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="questionMessage">Your Question</label>
+                            <textarea id="questionMessage" name="questionMessage" rows="6" placeholder="Type your question here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="button">Send Question</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Our Garden. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
