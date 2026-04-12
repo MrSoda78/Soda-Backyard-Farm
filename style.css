@@ -46,7 +46,7 @@ body {
 header {
     background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
     color: var(--white);
-    padding: 20px 0 18px;
+    padding: 16px 0 12px; /* reduced */
     position: relative;
     z-index: 2;
 }
