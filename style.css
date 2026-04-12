@@ -8,7 +8,7 @@
    Colour Palette
 ========================= */
 :root {
-    --green-bright: #4CD964;
+    --green-bright: #21ed65;
     --green-main: #2f9e44;
     --green-dark: #14532D;
     --green-deep: #0f3d22;
@@ -40,7 +40,7 @@ body {
 }
 
 /* =========================
-   Header / Navigation
+   Header
 ========================= */
 header {
     background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
@@ -58,11 +58,14 @@ header h1 {
     color: #ecffef;
 }
 
+/* =========================
+   Navigation
+========================= */
 nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 35px;
+    gap: 30px;
 }
 
 nav a {
@@ -77,24 +80,56 @@ nav a:hover {
 }
 
 /* =========================
-   Hero
+   HERO + SPLIT LAYOUT
 ========================= */
 .hero {
     background: linear-gradient(180deg, #e8faeb 0%, #f7fdf8 100%);
     padding: 60px 0;
-    text-align: center;
 }
 
-.hero h2 {
-    font-size: 2rem;
+.split-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.split-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    width: 100%;
+    max-width: 400px; /* FIXED IMAGE SIZE */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* =========================
+   Typography
+========================= */
+.hero h2,
+.featured h2,
+.about h2,
+.updates h2 {
     margin-bottom: 15px;
     color: var(--green-dark);
 }
 
-.hero p {
-    max-width: 700px;
-    margin: 0 auto 20px;
+.hero p,
+.about p,
+.updates p {
     color: var(--text-soft);
+    margin-bottom: 20px;
 }
 
 /* =========================
@@ -102,78 +137,33 @@ nav a:hover {
 ========================= */
 .button {
     display: inline-block;
-    background: linear-gradient(135deg, #2f9e44, #4CD964);
+    background: linear-gradient(135deg, var(--green-main), var(--green-bright));
     color: white;
     text-decoration: none;
-    padding: 14px 24px;
+    padding: 12px 22px;
     border-radius: 8px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    transition: all 0.25s ease;
+    transition: 0.25s;
 }
 
 .button:hover {
-    background: linear-gradient(135deg, #14532D, #3ec355);
+    background: linear-gradient(135deg, var(--green-dark), #3ec355);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.button.secondary {
-    background: #e9f8ec;
-    color: #14532D;
-    border: 2px solid #4CD964;
-}
-
-.button.secondary:hover {
-    background: #dff7e3;
 }
 
 /* =========================
-   General Sections
+   Sections
 ========================= */
 .featured,
 .about,
-.updates,
-.form-section,
-.videos-section,
-.calendar-section,
-.media-section,
-.donate-section,
-.order-section {
+.updates {
     padding: 50px 0;
 }
 
-.featured h2,
-.about h2,
-.updates h2,
-.videos-section h2,
-.calendar-section h2,
-.form-container h2,
-.media-section h2,
-.donate-card h2,
-.order-section h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--green-dark);
-}
-
-.about p,
-.updates p {
-    max-width: 800px;
-    margin: 0 auto 20px;
-    text-align: center;
-    color: var(--text-soft);
-}
-
 /* =========================
-   Cards / Product Grid
+   Cards
 ========================= */
 .card-grid {
     display: grid;
@@ -208,7 +198,7 @@ nav a:hover {
 }
 
 .available {
-    background-color: #dff7e3;
+    background-color: var(--green-soft);
     color: var(--green-dark);
 }
 
@@ -220,385 +210,6 @@ nav a:hover {
 .coming {
     background-color: #e8f8eb;
     color: var(--green-main);
-}
-
-/* =========================
-   Order Form / Forms
-========================= */
-.form-container {
-    max-width: 750px;
-    background-color: var(--white);
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    margin: 0 auto;
-    border: 1px solid var(--green-border);
-}
-
-.form-intro {
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--text-soft);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label,
-.form-group legend {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: var(--green-dark);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--green-border);
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: Arial, sans-serif;
-    background-color: #fcfffc;
-    color: var(--text-dark);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--green-main);
-    box-shadow: 0 0 0 3px rgba(76, 217, 100, 0.18);
-}
-
-fieldset.form-group {
-    border: 1px solid var(--green-border);
-    padding: 20px;
-    border-radius: 8px;
-    background-color: var(--green-muted);
-}
-
-.checkbox-row {
-    display: grid;
-    grid-template-columns: 1fr 100px;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.checkbox-row label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: normal;
-    color: var(--text-dark);
-}
-
-.checkbox-row input[type="number"] {
-    width: 100%;
-}
-
-.form-message {
-    margin-top: 20px;
-    font-weight: bold;
-    text-align: center;
-    color: var(--green-dark);
-}
-
-/* =========================
-   Videos
-========================= */
-.videos-intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    color: var(--text-soft);
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
-
-.video-card {
-    background-color: var(--white);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--green-border);
-}
-
-.video-card h3 {
-    margin-bottom: 15px;
-    color: var(--green-dark);
-}
-
-.video-card p {
-    margin-top: 15px;
-    color: var(--text-soft);
-}
-
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* =========================
-   Calendar
-========================= */
-.calendar-intro {
-    text-align: center;
-    max-width: 850px;
-    margin: 0 auto 30px;
-    color: var(--text-soft);
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.month-card {
-    background-color: var(--white);
-    padding: 22px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--green-border);
-}
-
-.month-card h3 {
-    margin-bottom: 12px;
-    color: var(--green-dark);
-}
-
-.month-card ul {
-    padding-left: 18px;
-}
-
-.month-card li {
-    margin-bottom: 8px;
-    color: var(--text-dark);
-}
-
-/* =========================
-   Media Section
-========================= */
-.media-section h2 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.media-intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    color: var(--text-soft);
-}
-
-.media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.media-item {
-    background-color: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--green-border);
-}
-
-.media-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.support-media {
-    margin-top: 25px;
-}
-
-.support-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.support-images img {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--green-border);
-}
-
-/* =========================
-   Donate Page
-========================= */
-.donate-section .container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.donate-card {
-    max-width: 750px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    border: 1px solid var(--green-border);
-}
-
-.donate-card p {
-    margin-bottom: 18px;
-    color: var(--text-soft);
-}
-
-.donate-buttons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.donate-note {
-    margin-top: 20px;
-    font-style: italic;
-    color: var(--text-soft);
-}
-
-/* =========================
-   Order Page
-========================= */
-.order-section h2 {
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.order-intro {
-    text-align: center;
-    max-width: 850px;
-    margin: 0 auto 30px;
-    color: var(--text-soft);
-}
-
-.order-layout {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 30px;
-    align-items: start;
-}
-
-.order-info,
-.order-form-wrap {
-    background-color: var(--white);
-    padding: 28px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--green-border);
-}
-
-.order-info h3 {
-    margin-bottom: 15px;
-    color: var(--green-dark);
-}
-
-.order-info p {
-    margin-bottom: 15px;
-    color: var(--text-soft);
-}
-
-.order-info ul {
-    padding-left: 20px;
-    margin-bottom: 25px;
-}
-
-.order-info li {
-    margin-bottom: 10px;
-    color: var(--text-dark);
-}
-
-.order-total {
-    margin: 20px 0 25px;
-    text-align: right;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--green-dark);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.product-row {
-    display: grid;
-    grid-template-columns: 1fr 120px;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.product-row label {
-    margin-bottom: 0;
-    font-weight: normal;
-    color: var(--text-dark);
-}
-
-.product-row input {
-    width: 100%;
-}
-
-.order-form-wrap .button,
-#orderForm button[type="submit"] {
-    width: 100%;
-    margin-top: 10px;
-    padding: 15px 20px;
-    font-size: 1.05rem;
-    background: linear-gradient(135deg, #14532D, #4CD964);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14);
-    transition: all 0.25s ease;
-}
-
-.order-form-wrap .button:hover,
-#orderForm button[type="submit"]:hover {
-    background: linear-gradient(135deg, #0f3d22, #39c653);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-}
-
-.order-form-wrap .button:active,
-#orderForm button[type="submit"]:active {
-    transform: translateY(0);
 }
 
 /* =========================
@@ -615,113 +226,14 @@ footer {
 /* =========================
    Responsive
 ========================= */
-@media (max-width: 900px) {
-    .order-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 768px) {
+    .split-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
     nav ul {
         flex-direction: column;
         gap: 10px;
     }
-
-    .hero h2 {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .form-container {
-        padding: 20px;
-    }
-
-    .checkbox-row,
-    .form-row,
-    .product-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ORDER TOTAL DISPLAY */
-/* ORDER TOTAL DISPLAY (better alignment) */
-.order-total {
-    margin: 20px 0;
-    padding: 15px 20px;
-    background-color: #e6f9ec;
-    border-left: 5px solid #21ed65;
-    border-radius: 6px;
-    text-align: left; /* changed */
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #0f5132;
-}
-
-/* FIELDSET FIX */
-fieldset.form-group {
-    border: 1px solid #ccebd6;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f3fff6;
-}
-
-/* LEGEND FIX — keeps it INSIDE visually */
-fieldset.form-group legend {
-    padding: 5px 10px;
-    font-weight: bold;
-    color: #0f5132;
-    background-color: #f3fff6;
-    border-radius: 4px;
-}
-
-/* FORM MESSAGE */
-.form-message {
-    margin-top: 15px;
-    color: #155724;
-    font-weight: 500;
-}
-
-/* INPUT ALIGNMENT (keep grid intact) */
-.product-row input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccebd6;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.product-row input[type="number"]:focus {
-    outline: none;
-    border-color: #21ed65;
-    box-shadow: 0 0 5px rgba(33, 237, 101, 0.4);
-
-}
-
-/* Subtle animation when total updates */
-.order-total.updated {
-    background-color: #d1f7dc;
-    transform: scale(1.02);
-    transition: all 0.2s ease;
-}
-
-/* FORM MESSAGE (confirmation text) */
-.form-message {
-    margin-top: 15px;
-    color: #155724;
-    font-weight: 500;
-}
-
-.product-row input[type="number"] {
-    width: 80px;
-    padding: 8px;
-    border: 1px solid #ccebd6;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.product-row input[type="number"]:focus {
-    outline: none;
-    border-color: #21ed65;
-    box-shadow: 0 0 5px rgba(33, 237, 101, 0.4);
 }
