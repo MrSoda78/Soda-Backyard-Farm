@@ -21,6 +21,7 @@
     --text-dark: #1f2e22;
     --text-soft: #4b5f50;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.16);
 }
 
 /* =========================
@@ -45,7 +46,7 @@ body {
 header {
     background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
     color: var(--white);
-    padding: 20px 0 30px;
+    padding: 20px 0 24px;
 }
 
 header h1 {
@@ -53,9 +54,14 @@ header h1 {
 }
 
 .tagline {
-    margin-bottom: 15px;
+    margin-bottom: 0;
     font-size: 1rem;
     color: #ecffef;
+    max-width: 650px;
+}
+
+nav {
+    margin-top: 18px;
 }
 
 nav ul {
@@ -77,8 +83,36 @@ nav a:hover {
 }
 
 /* =========================
-   Header Banner
+   Header Layout
+   Supports top-right banner image
 ========================= */
+.header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.header-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.header-corner-image {
+    flex: 0 0 auto;
+}
+
+.header-corner-image img {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-strong);
+    object-fit: cover;
+}
+
+/* Optional support if older banner markup still exists */
 .header-banner {
     margin-top: 25px;
     display: flex;
@@ -116,8 +150,31 @@ nav a:hover {
     height: auto;
     display: block;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    box-shadow: var(--shadow-strong);
     object-fit: cover;
+}
+
+/* =========================
+   Hero / Shared Home Sections
+========================= */
+.hero {
+    background: linear-gradient(180deg, #e8faeb 0%, #f7fdf8 100%);
+    padding: 55px 0;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.featured,
+.about,
+.updates,
+.media-section,
+.videos-section,
+.donate-section,
+.order-section,
+.questions-section {
+    padding: 50px 0;
 }
 
 /* =========================
@@ -154,25 +211,6 @@ nav a:hover {
     border-radius: 12px;
     box-shadow: var(--shadow);
     object-fit: cover;
-}
-
-/* =========================
-   Hero / Home Sections
-========================= */
-.hero {
-    background: linear-gradient(180deg, #e8faeb 0%, #f7fdf8 100%);
-    padding: 50px 0;
-}
-
-.featured,
-.about,
-.updates,
-.media-section,
-.videos-section,
-.donate-section,
-.order-section,
-.questions-section {
-    padding: 50px 0;
 }
 
 /* =========================
@@ -305,7 +343,7 @@ nav a:hover {
 }
 
 /* =========================
-   Forms - Shared
+   Shared Card / Panel Styling
 ========================= */
 .form-container,
 .questions-card,
@@ -320,6 +358,9 @@ nav a:hover {
     border: 1px solid var(--green-border);
 }
 
+/* =========================
+   Shared Forms
+========================= */
 .form-group {
     margin-bottom: 20px;
 }
@@ -605,6 +646,10 @@ footer {
    Responsive
 ========================= */
 @media (max-width: 900px) {
+    .header-corner-image img {
+        width: 180px;
+    }
+
     .header-banner {
         gap: 30px;
     }
@@ -628,6 +673,16 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .header-corner-image img {
+        width: 200px;
+    }
+
     .header-banner {
         flex-direction: column;
         text-align: center;
@@ -683,9 +738,11 @@ footer {
         font-size: 1.6rem;
     }
 
+    .header-corner-image img,
     .header-banner-image img,
     .image-content img {
         max-width: 240px;
+        width: 100%;
     }
 
     .questions-card,
