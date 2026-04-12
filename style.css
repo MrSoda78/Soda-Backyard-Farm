@@ -4,11 +4,29 @@
     box-sizing: border-box;
 }
 
+/* =========================
+   Colour Palette
+========================= */
+:root {
+    --green-darkest: #1f4d2e;
+    --green-dark: #2f6b3c;
+    --green-main: #3f8a4f;
+    --green-medium: #5aa469;
+    --green-soft: #dcefdc;
+    --green-light: #eef7ee;
+    --green-accent: #7bbf86;
+    --green-border: #bfd8c1;
+    --white: #ffffff;
+    --text-dark: #243224;
+    --text-soft: #4f634f;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #faf7f2;
-    color: #2f3b2f;
+    background-color: var(--green-light);
+    color: var(--text-dark);
 }
 
 .container {
@@ -17,9 +35,12 @@ body {
     margin: 0 auto;
 }
 
+/* =========================
+   Header / Navigation
+========================= */
 header {
-    background-color: #5b84b1;
-    color: white;
+    background: linear-gradient(135deg, var(--green-darkest), var(--green-main));
+    color: var(--white);
     padding: 20px 0;
 }
 
@@ -30,6 +51,7 @@ header h1 {
 .tagline {
     margin-bottom: 15px;
     font-size: 1rem;
+    color: #e8f6e8;
 }
 
 nav ul {
@@ -40,17 +62,21 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
 }
 
 nav a:hover {
     text-decoration: underline;
+    color: #e6f7e6;
 }
 
+/* =========================
+   Hero
+========================= */
 .hero {
-    background-color: #e8f0f8;
+    background: linear-gradient(180deg, #e4f3e4 0%, #f4fbf4 100%);
     padding: 60px 0;
     text-align: center;
 }
@@ -58,35 +84,42 @@ nav a:hover {
 .hero h2 {
     font-size: 2rem;
     margin-bottom: 15px;
+    color: var(--green-darkest);
 }
 
 .hero p {
     max-width: 700px;
     margin: 0 auto 20px;
+    color: var(--text-soft);
 }
 
+/* =========================
+   Buttons
+========================= */
 .button {
     display: inline-block;
-    background-color: #5b84b1;
-    color: white;
+    background-color: var(--green-main);
+    color: var(--white);
     text-decoration: none;
     padding: 12px 20px;
     border-radius: 6px;
     font-weight: bold;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
-    background-color: #3e6a94;
+    background-color: var(--green-dark);
+    transform: translateY(-1px);
 }
 
 .button.secondary {
-    background-color: #c98b5b;
+    background-color: var(--green-medium);
 }
 
 .button.secondary:hover {
-    background-color: #a96f43;
+    background-color: var(--green-dark);
 }
 
 /* =========================
@@ -97,7 +130,10 @@ nav a:hover {
 .updates,
 .form-section,
 .videos-section,
-.calendar-section {
+.calendar-section,
+.media-section,
+.donate-section,
+.order-section {
     padding: 50px 0;
 }
 
@@ -106,16 +142,25 @@ nav a:hover {
 .updates h2,
 .videos-section h2,
 .calendar-section h2,
-.form-container h2 {
+.form-container h2,
+.media-section h2,
+.donate-card h2,
+.order-section h2 {
     margin-bottom: 20px;
     text-align: center;
+    color: var(--green-darkest);
 }
 
 .about p,
-.updates p {
+.updates p,
+.media-intro,
+.videos-intro,
+.calendar-intro,
+.order-intro {
     max-width: 800px;
     margin: 0 auto 20px;
     text-align: center;
+    color: var(--text-soft);
 }
 
 /* =========================
@@ -128,15 +173,17 @@ nav a:hover {
 }
 
 .card {
-    background-color: white;
+    background-color: var(--white);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
     text-align: center;
+    border: 1px solid var(--green-border);
 }
 
 .card h3 {
     margin-bottom: 10px;
+    color: var(--green-dark);
 }
 
 /* =========================
@@ -152,35 +199,37 @@ nav a:hover {
 }
 
 .available {
-    background-color: #d9ead7;
-    color: #2d572c;
+    background-color: #dcefdc;
+    color: var(--green-darkest);
 }
 
 .limited {
-    background-color: #f4e3c3;
-    color: #7a5c00;
+    background-color: #edf6e4;
+    color: #58733c;
 }
 
 .coming {
-    background-color: #dbe7f5;
-    color: #3e5f85;
+    background-color: #d6ead8;
+    color: var(--green-dark);
 }
 
 /* =========================
-   Order Form
+   Forms
 ========================= */
 .form-container {
     max-width: 750px;
-    background-color: white;
+    background-color: var(--white);
     padding: 35px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
     margin: 0 auto;
+    border: 1px solid var(--green-border);
 }
 
 .form-intro {
     text-align: center;
     margin-bottom: 30px;
+    color: var(--text-soft);
 }
 
 .form-group {
@@ -192,6 +241,7 @@ nav a:hover {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
+    color: var(--green-darkest);
 }
 
 .form-group input,
@@ -199,16 +249,27 @@ nav a:hover {
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #cfcfcf;
+    border: 1px solid var(--green-border);
     border-radius: 6px;
     font-size: 1rem;
     font-family: Arial, sans-serif;
+    background-color: #fcfffc;
+    color: var(--text-dark);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--green-main);
+    box-shadow: 0 0 0 3px rgba(63, 138, 79, 0.15);
 }
 
 fieldset.form-group {
-    border: 1px solid #d8d8d8;
+    border: 1px solid var(--green-border);
     padding: 20px;
     border-radius: 8px;
+    background-color: #fbfefb;
 }
 
 .checkbox-row {
@@ -224,6 +285,7 @@ fieldset.form-group {
     align-items: center;
     gap: 10px;
     font-weight: normal;
+    color: var(--text-dark);
 }
 
 .checkbox-row input[type="number"] {
@@ -234,18 +296,12 @@ fieldset.form-group {
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
-    color: #3e6a94;
+    color: var(--green-dark);
 }
 
 /* =========================
    Videos
 ========================= */
-.videos-intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 30px;
-}
-
 .video-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -253,18 +309,21 @@ fieldset.form-group {
 }
 
 .video-card {
-    background-color: white;
+    background-color: var(--white);
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--green-border);
 }
 
 .video-card h3 {
     margin-bottom: 15px;
+    color: var(--green-dark);
 }
 
 .video-card p {
     margin-top: 15px;
+    color: var(--text-soft);
 }
 
 .video-wrapper {
@@ -288,12 +347,6 @@ fieldset.form-group {
 /* =========================
    Calendar
 ========================= */
-.calendar-intro {
-    text-align: center;
-    max-width: 850px;
-    margin: 0 auto 30px;
-}
-
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -301,14 +354,16 @@ fieldset.form-group {
 }
 
 .month-card {
-    background-color: white;
+    background-color: var(--white);
     padding: 22px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--green-border);
 }
 
 .month-card h3 {
     margin-bottom: 12px;
+    color: var(--green-dark);
 }
 
 .month-card ul {
@@ -317,47 +372,12 @@ fieldset.form-group {
 
 .month-card li {
     margin-bottom: 8px;
+    color: var(--text-dark);
 }
 
 /* =========================
-   Footer
+   Media Section
 ========================= */
-footer {
-    background-color: #5b84b1;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 30px;
-}
-
-/* =========================
-   Responsive
-========================= */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero h2 {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .form-container {
-        padding: 20px;
-    }
-
-    .checkbox-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-.media-section {
-    padding: 50px 0;
-}
-
 .media-section h2 {
     text-align: center;
     margin-bottom: 10px;
@@ -376,10 +396,11 @@ footer {
 }
 
 .media-item {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--green-border);
 }
 
 .media-item img {
@@ -403,36 +424,32 @@ footer {
 .support-images img {
     width: 100%;
     border-radius: 8px;
+    border: 1px solid var(--green-border);
 }
 
 /* =========================
    Donate Page
 ========================= */
-.donate-section {
-    padding: 50px 0;
-}
 .donate-section .container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
+
 .donate-card {
     max-width: 750px;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--white);
     padding: 35px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
     text-align: center;
-}
-
-.donate-card h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    border: 1px solid var(--green-border);
 }
 
 .donate-card p {
     margin-bottom: 18px;
+    color: var(--text-soft);
 }
 
 .donate-buttons {
@@ -446,16 +463,12 @@ footer {
 .donate-note {
     margin-top: 20px;
     font-style: italic;
-    color: #666;
+    color: var(--text-soft);
 }
 
 /* =========================
    Order Page
 ========================= */
-.order-section {
-    padding: 50px 0;
-}
-
 .order-section h2 {
     text-align: center;
     margin-bottom: 12px;
@@ -476,18 +489,21 @@ footer {
 
 .order-info,
 .order-form-wrap {
-    background-color: white;
+    background-color: var(--white);
     padding: 28px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--green-border);
 }
 
 .order-info h3 {
     margin-bottom: 15px;
+    color: var(--green-dark);
 }
 
 .order-info p {
     margin-bottom: 15px;
+    color: var(--text-soft);
 }
 
 .order-info ul {
@@ -497,12 +513,15 @@ footer {
 
 .order-info li {
     margin-bottom: 10px;
+    color: var(--text-dark);
+}
 
-    .order-total {
+.order-total {
     margin: 20px 0 25px;
     text-align: right;
     font-size: 1.1rem;
-}
+    font-weight: bold;
+    color: var(--green-darkest);
 }
 
 .form-row {
@@ -522,19 +541,50 @@ footer {
 .product-row label {
     margin-bottom: 0;
     font-weight: normal;
+    color: var(--text-dark);
 }
 
 .product-row input {
     width: 100%;
 }
 
+/* =========================
+   Footer
+========================= */
+footer {
+    background: linear-gradient(135deg, var(--green-darkest), var(--green-dark));
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* =========================
+   Responsive
+========================= */
 @media (max-width: 900px) {
     .order-layout {
         grid-template-columns: 1fr;
     }
 }
 
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+}
+
 @media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .checkbox-row,
     .form-row,
     .product-row {
         grid-template-columns: 1fr;
