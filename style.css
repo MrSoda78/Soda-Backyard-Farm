@@ -46,7 +46,9 @@ body {
 header {
     background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
     color: var(--white);
-    padding: 20px 0 24px;
+    padding: 20px 0 18px;
+    position: relative;
+    z-index: 2;
 }
 
 header h1 {
@@ -84,32 +86,38 @@ nav a:hover {
 
 /* =========================
    Header Layout
-   Supports top-right banner image
+   Top-right image overlaps downward
 ========================= */
 .header-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 30px;
+    position: relative;
 }
 
 .header-copy {
     flex: 1 1 auto;
     min-width: 0;
+    padding-right: 10px;
 }
 
 .header-corner-image {
     flex: 0 0 auto;
+    position: relative;
+    margin-bottom: -70px;
+    z-index: 3;
 }
 
 .header-corner-image img {
     display: block;
-    width: 170px;
+    width: 155px;
     max-width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: var(--shadow-strong);
     object-fit: cover;
+    background-color: var(--white);
 }
 
 /* Optional support if older banner markup still exists */
@@ -146,7 +154,7 @@ nav a:hover {
 
 .header-banner-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 260px;
     height: auto;
     display: block;
     border-radius: 12px;
@@ -159,7 +167,9 @@ nav a:hover {
 ========================= */
 .hero {
     background: linear-gradient(180deg, #e8faeb 0%, #f7fdf8 100%);
-    padding: 55px 0;
+    padding: 95px 0 55px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -646,8 +656,12 @@ footer {
    Responsive
 ========================= */
 @media (max-width: 900px) {
+    .header-corner-image {
+        margin-bottom: -55px;
+    }
+
     .header-corner-image img {
-        width: 145px;
+        width: 135px;
     }
 
     .header-banner {
@@ -670,6 +684,10 @@ footer {
     .order-layout {
         grid-template-columns: 1fr;
     }
+
+    .hero {
+        padding-top: 80px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -679,8 +697,13 @@ footer {
         gap: 18px;
     }
 
+    .header-corner-image {
+        margin-bottom: -35px;
+        align-self: flex-end;
+    }
+
     .header-corner-image img {
-        width: 170px;
+        width: 150px;
     }
 
     .header-banner {
@@ -720,7 +743,7 @@ footer {
     }
 
     .hero {
-        padding: 45px 0;
+        padding: 70px 0 45px;
     }
 
     .form-row,
@@ -738,11 +761,19 @@ footer {
         font-size: 1.6rem;
     }
 
+    .header-corner-image {
+        margin-bottom: -20px;
+    }
+
     .header-corner-image img,
     .header-banner-image img,
     .image-content img {
-        max-width: 220px;
+        max-width: 200px;
         width: 100%;
+    }
+
+    .hero {
+        padding-top: 55px;
     }
 
     .questions-card,
