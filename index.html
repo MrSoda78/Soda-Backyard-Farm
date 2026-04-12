@@ -27,12 +27,20 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h2>Fresh from the Garden</h2>
-                <p>
-                    We are a small homegrown garden offering fresh produce, seasonal updates,
-                    and a closer look at what is growing throughout the year.
-                </p>
-                <a class="button" href="available.html">See What’s Available</a>
+                <div class="split-section">
+                    <div class="text-content">
+                        <h2>Fresh from the Garden</h2>
+                        <p>
+                            We are a small homegrown garden offering fresh produce, seasonal updates,
+                            and a closer look at what is growing throughout the year.
+                        </p>
+                        <a class="button" href="available.html">See What’s Available</a>
+                    </div>
+
+                    <div class="image-content">
+                        <img src="images/hero-garden.jpg" alt="Fresh homegrown vegetables from our garden">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -61,78 +69,87 @@
 
         <section class="about">
             <div class="container">
-                <h2>About Our Garden</h2>
-                <p>
-                    Our garden is built with care, patience, and love for growing fresh food.
-                    We want to make it easier for our customers to know what is available,
-                    when orders are being accepted, and what is happening in the garden each week.
-                </p>
+                <div class="split-section reverse">
+                    <div class="text-content">
+                        <h2>About Our Garden</h2>
+                        <p>
+                            Our garden is built with care, patience, and love for growing fresh food.
+                            We want to make it easier for our customers to know what is available,
+                            when orders are being accepted, and what is happening in the garden each week.
+                        </p>
+                    </div>
+
+                    <div class="image-content">
+                        <img src="images/about-garden.jpg" alt="Backyard garden growing through the season">
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="updates">
             <div class="container">
-                <h2>Garden Updates</h2>
-                <p>
-                    Follow our weekly videos to see what is being planted, cultivated, and harvested.
+                <div class="split-section">
+                    <div class="text-content">
+                        <h2>Garden Updates</h2>
+                        <p>
+                            Follow our weekly videos to see what is being planted, cultivated, and harvested.
+                        </p>
+                        <a class="button secondary" href="videos.html">Watch Videos</a>
+                    </div>
+
+                    <div class="image-content">
+                        <img src="images/updates-garden.jpg" alt="Fresh produce and garden updates from the season">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="media-section">
+            <div class="container">
+                <h2>From the Garden</h2>
+                <p class="media-intro">
+                    A look at what’s happening in the garden — planting, growing, and harvesting throughout the season.
                 </p>
-                <a class="button secondary" href="videos.html">Watch Videos</a>
+
+                <div class="media-grid">
+                    <div class="media-item">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/VIDEO_ID_1"
+                                title="Garden Video 1"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/VIDEO_ID_2"
+                                title="Garden Video 2"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="media-item">
+                        <img src="images/garden1.jpg" alt="Garden image showing vegetables growing">
+                    </div>
+
+                    <div class="media-item">
+                        <img src="images/garden2.jpg" alt="Garden image showing harvest from the garden">
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-<section class="media-section">
-    <div class="container">
-        <h2>From the Garden</h2>
-        <p class="media-intro">
-            A look at what’s happening in the garden — planting, growing, and harvesting throughout the season.
-        </p>
-
-        <div class="media-grid">
-
-            <!-- Video 1 -->
-            <div class="media-item">
-                <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/VIDEO_ID_1"
-                        title="Garden Video"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="media-item">
-                <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/VIDEO_ID_2"
-                        title="Garden Video"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- Image 1 -->
-            <div class="media-item">
-                <img src="images/garden1.jpg" alt="Garden image">
-            </div>
-
-            <!-- Image 2 -->
-            <div class="media-item">
-                <img src="images/garden2.jpg" alt="Garden image">
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<footer>
+    <footer>
         <div class="container">
             <p>&copy; 2026 Our Garden. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
